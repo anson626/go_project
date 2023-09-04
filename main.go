@@ -21,7 +21,7 @@ func init() {
 	opts := options.Client().ApplyURI(url) //返回一个客户端配置选项类型
 	opts.SetConnectTimeout(3 * time.Second)
 	var err error
-	client, err = mongo.Connect(context.TODO(), opts) //todo 空上下文
+	client, err = mongo.Connect(context.TODO(), opts) //todo 空上下文 testing
 	if err != nil {
 		log.Panic(err)
 	}
@@ -55,5 +55,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	fmt.Println(insertResult.InsertedID)
 	fmt.Println(insertResult.InsertedID)
 }
